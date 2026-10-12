@@ -219,3 +219,12 @@ footer h4{font-family:var(--ft);text-transform:uppercase;letter-spacing:.14em;fo
 footer nav a{display:block;padding:4px 0}
 footer nav a:hover{color:#fff}
 footer .abajo{margin-top:34px;padding-top:16px;border-top:1px solid var(--linea);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:#777}
+
+/* Maquinaria en fondo blanco */
+.grid-m{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:700px){.grid-m{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.grid-m{grid-template-columns:repeat(4,1fr)}}
+.grid-m .maq{display:block;background:#fff;border-radius:var(--radio);overflow:hidden;position:relative}
+.grid-m .maq img{aspect-ratio:1;object-fit:contain;width:100%;background:#fff;padding:8px;transition:transform .4s}
+.grid-m .maq:hover img{transform:scale(1.04)}
+.grid-m .maq b{position:absolute;left:0;right:0;bottom:0;background:var(--rojo);color:#fff;font-family:var(--ft);text-transform:uppercase;letter-spacing:.1em;font-size:13px;padding:6px 10px;text-align:center}

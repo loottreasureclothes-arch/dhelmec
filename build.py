@@ -18,7 +18,7 @@ def shell(archivo, titulo, desc, cuerpo):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<meta property="og:title" content="{titulo}"><meta property="og:description" content="{desc}"><meta property="og:image" content="img/dhelmec-8387.jpg">
+<meta property="og:title" content="{titulo}"><meta property="og:description" content="{desc}"><meta property="og:image" content="img/f-h-portada.jpg">
 </head>
 <body>
 <header class="top">
@@ -49,12 +49,12 @@ def shell(archivo, titulo, desc, cuerpo):
 </html>'''
 
 SERVICIOS = [
- ("instalaciones","img/dhelmec-8382.jpg","Instalaciones electromecánicas","Eléctricas y mecánicas en planta","Ejecución y adecuación de instalaciones eléctricas y mecánicas para líneas, equipos y áreas de producción. Tableros, alimentaciones, canalizaciones y puesta en marcha."),
- ("ductos","img/dhelmec-8377.jpg","Ductos","Acero inoxidable, negro y galvanizado","Fabricación e instalación de ductería a la medida: extracción, ventilación, aire y procesos. Espiral, rectangular y piezas especiales según cada proyecto."),
- ("paileria","img/dhelmec-8356.jpg","Pailería y estructuras","Fabricación metálica ligera y media","Bases, soportes, plataformas, protecciones, racks y estructuras metálicas para dentro de planta. Diseñadas para cargar lo que tu proceso necesita."),
- ("soldadura","img/dhelmec-8389.jpg","Soldadura e inoxidable","Fabricación, unión y adecuaciones","Soldadura para mantenimiento, montaje y fabricación de componentes metálicos, incluyendo piezas en acero inoxidable para alimentos y procesos."),
- ("tuberias","img/dhelmec-8370.jpg","Tuberías de proceso","Fabricación, montaje y adecuación","Spools, tramos bridados y modificaciones de tubería para servicios industriales: agua, aire, vapor y procesos, adaptados a la operación del cliente."),
- ("maquinaria","img/dhelmec-8360.jpg","Movimiento de maquinaria","Descarga, maniobra y colocación","Bajamos, movemos y colocamos equipos y maquinaria con montacargas y maniobras controladas, hasta dejarlos en el punto exacto dentro de la planta."),
+ ("instalaciones","img/f-s-instalaciones.jpg","Instalaciones electromecánicas","Eléctricas y mecánicas en planta","Ejecución y adecuación de instalaciones eléctricas y mecánicas para líneas, equipos y áreas de producción. Tableros, alimentaciones, canalizaciones y puesta en marcha."),
+ ("ductos","img/f-d-8376.jpg","Ductos y espirotubo","Galvanizado, negro e inoxidable, varios calibres","Fabricamos espirotubo (ducto en espiral), ducto recto, codos, tees, reducciones y piezas especiales a la medida, en el calibre y material que pide cada proyecto: extracción, ventilación, aire y procesos."),
+ ("paileria","img/f-s-estructuras.jpg","Pailería y estructuras","Fabricación metálica ligera y media","Bases, soportes, plataformas, protecciones, racks y estructuras metálicas para dentro de planta. Diseñadas para cargar lo que tu proceso necesita."),
+ ("soldadura","img/f-s-inox.jpg","Soldadura e inoxidable","Fabricación, unión y adecuaciones","Soldadura para mantenimiento, montaje y fabricación de componentes metálicos, incluyendo piezas en acero inoxidable para alimentos y procesos."),
+ ("tuberias","img/f-s-tuberias.jpg","Tuberías de proceso","Fabricación, montaje y adecuación","Spools, tramos bridados y modificaciones de tubería para servicios industriales: agua, aire, vapor y procesos, adaptados a la operación del cliente."),
+ ("maquinaria","img/f-m-8359.jpg","Movimiento de maquinaria","Descarga, maniobra y colocación","Bajamos, movemos y colocamos equipos y maquinaria con montacargas y maniobras controladas, hasta dejarlos en el punto exacto dentro de la planta."),
 ]
 
 def tarjetas():
@@ -63,11 +63,11 @@ def tarjetas():
         out.append(f'<a class="tarj" href="servicios.html#{id_}"><img src="{img}" alt="{t}" loading="lazy"><span class="num">0{i}</span><div class="pie"><b>{t}</b><span>{sub}</span></div></a>')
     return "".join(out)
 
-GAL_HOME = ["8366","8372","8389","8369","8378","8386","8375","8359"]
+GAL_HOME = ["f-d-8376","f-m-8366","f-d-8369","f-d-8385","f-m-8372","f-d-8377","f-s-inox","f-m-8384"]
 def collage():
     out=[]
     for i,n in enumerate(GAL_HOME):
-        out.append(f'<a href="img/g-{n}.jpg" data-lb class="{"g" if i==0 else ""}"><img src="img/g-{n}.jpg" alt="Trabajo DHELMEC" loading="lazy"></a>')
+        out.append(f'<a href="img/{n}.jpg" data-lb class="{"g" if i==0 else ""}"><img src="img/{n}.jpg" alt="Trabajo DHELMEC" loading="lazy"></a>')
     return "".join(out)
 
 CONTACTO_BLOQUE = '''
@@ -104,7 +104,7 @@ CONTACTO_BLOQUE = '''
 # ---------- INICIO ----------
 index = f'''
 <section class="hero" id="top">
-  <div class="fondo"><img src="img/dhelmec-8387.jpg" alt="Taller DHELMEC" fetchpriority="high"><video muted loop playsinline autoplay aria-hidden="true"></video></div>
+  <div class="fondo"><img src="img/f-h-portada.jpg" alt="Taller DHELMEC" fetchpriority="high"><video muted loop playsinline autoplay aria-hidden="true"></video></div>
   <img class="rayo" src="img/rayo.svg" alt="" aria-hidden="true">
   <div class="wrap">
     <p class="ojo enter">Aguascalientes · Industria</p>
@@ -133,7 +133,7 @@ index = f'''
 <section id="nosotros">
   <div class="wrap">
     <div class="dos">
-      <div class="foto-marco" data-rv><img src="img/dhelmec-8366.jpg" alt="Taladro radial en el taller de DHELMEC" loading="lazy"><span>Taller DHELMEC · Las Hadas, Ags.</span></div>
+      <div class="foto-marco" data-rv><img src="img/f-d-8377.jpg" alt="Espirotubo fabricado por DHELMEC" loading="lazy"><span>Espirotubo · taller DHELMEC</span></div>
       <div data-rv>
         <p class="ojo">Quién es DHELMEC</p>
         <h2>Soluciones que <em>funcionan en planta.</em></h2>
@@ -163,18 +163,18 @@ filas=[]
 for i,(id_,img,t,sub,txt) in enumerate(SERVICIOS):
     filas.append(f'''<div class="fila-s {"inv" if i%2 else ""}" id="{id_}" data-rv><img src="{img}" alt="{t}" loading="lazy"><div class="texto"><h4>Servicio 0{i+1}</h4><h3>{t}</h3><h4>{sub}</h4><p>{txt}</p><a class="btn" href="contacto.html">Solicitar cotización</a></div></div>''')
 servicios = f'''
-<section class="sub" id="top"><img class="fondo" src="img/dhelmec-8372.jpg" alt=""><div class="wrap"><p class="ojo enter">Servicios</p><h1 class="enter d1">Lo que hacemos, <em>área por área.</em></h1><p class="lead enter d2">Fabricación, instalación y maniobra para las necesidades reales de cada proyecto industrial.</p></div></section>
+<section class="sub" id="top"><img class="fondo" src="img/f-d-8376.jpg" alt=""><div class="wrap"><p class="ojo enter">Servicios</p><h1 class="enter d1">Lo que hacemos, <em>área por área.</em></h1><p class="lead enter d2">Fabricación, instalación y maniobra para las necesidades reales de cada proyecto industrial.</p></div></section>
 <section><div class="wrap">{"".join(filas)}</div></section>
 {CONTACTO_BLOQUE}
 '''
 
 # ---------- NOSOTROS ----------
 nosotros = f'''
-<section class="sub" id="top"><img class="fondo" src="img/dhelmec-8360.jpg" alt=""><div class="wrap"><p class="ojo enter">Nosotros</p><h1 class="enter d1">Soluciones industriales <em>hechas a la medida.</em></h1><p class="lead enter d2">Desarrollos Hidrocálidos Electromecánicos S.A. de C.V. es una empresa de Aguascalientes dedicada a instalaciones electromecánicas, fabricación metálica y servicios para la industria.</p></div></section>
+<section class="sub" id="top"><img class="fondo" src="img/f-s-estructuras.jpg" alt=""><div class="wrap"><p class="ojo enter">Nosotros</p><h1 class="enter d1">Soluciones industriales <em>hechas a la medida.</em></h1><p class="lead enter d2">Desarrollos Hidrocálidos Electromecánicos S.A. de C.V. es una empresa de Aguascalientes dedicada a instalaciones electromecánicas, fabricación metálica y servicios para la industria.</p></div></section>
 <section><div class="wrap"><div class="dos">
   <div data-rv><p class="ojo">Quiénes somos</p><h2>Trabajo técnico. <em>Soluciones reales.</em></h2><p class="lead" style="margin-top:16px">Atendemos proyectos eléctricos, mecánicos, hidráulicos y metalmecánicos de acuerdo con las condiciones y necesidades operativas de cada cliente. Contamos con taller propio equipado con cizalla hidráulica, dobladoras, taladro radial, roladora y equipo de soldadura.</p>
   <div class="datos"><div><b>Taller</b><small>propio en Las Hadas</small></div><div><b>Campo</b><small>instalación en planta</small></div><div><b>Ags.</b><small>y región</small></div></div></div>
-  <div class="foto-marco" data-rv><img src="img/dhelmec-8378.jpg" alt="Dobladora en el taller de DHELMEC" loading="lazy"><span>Dobladora · taller DHELMEC</span></div>
+  <div class="foto-marco" data-rv><img src="img/f-s-tuberias.jpg" alt="Tuberías bridadas fabricadas por DHELMEC" loading="lazy"><span>Tubería de proceso · taller DHELMEC</span></div>
 </div></div></section>
 <section class="band"><div class="wrap"><div class="mv" data-rv-g>
   <article><span>01</span><h3>Misión</h3><p>Brindar soluciones electromecánicas y de fabricación metálica que respondan de manera funcional a las necesidades de cada proyecto industrial.</p></article>
@@ -195,9 +195,15 @@ ORDEN = "8387 8366 8370 8377 8389 8360 8382 8372 8356 8378 8369 8375 8386 8359 8
 _todas = {os.path.basename(f) for f in glob.glob(os.path.join(HERE,"img","g-*.jpg"))}
 fotos = [f"g-{n}.jpg" for n in ORDEN if f"g-{n}.jpg" in _todas] + sorted(f for f in _todas if f[2:6] not in ORDEN)
 grid = "".join(f'<a href="img/{f}" data-lb><img src="img/{f}" alt="Taller DHELMEC" loading="lazy"></a>' for f in fotos)
+MAQ = [("f-m-8360","Cizalla hidráulica"),("f-m-8359","Dobladora hidráulica"),("f-m-8372","Dobladora"),("f-m-8378","Dobladora"),("f-m-8362","Cizalla"),("f-m-8384","Roladora"),("f-m-8366","Taladro radial"),("f-m-8371","Roscadora de tubo"),("f-m-8364","Cortadora"),("f-m-8388","Mesa de trabajo"),("f-m-8383","Equipo en inoxidable")]
+maq = "".join(f'<a class="maq" href="img/{n}.jpg" data-lb><img src="img/{n}.jpg" alt="Maquinaria del taller DHELMEC" loading="lazy"></a>' for n,t in MAQ)
+PIEZAS = ["f-d-8376","f-d-8377","f-d-8375","f-d-8373","f-d-8374","f-d-8379","f-d-8385","f-d-8369","f-s-estructuras","f-s-inox","f-s-tuberias","f-x-tablero"]
+piezas = "".join(f'<a href="img/{n}.jpg" data-lb><img src="img/{n}.jpg" alt="Pieza fabricada por DHELMEC" loading="lazy"></a>' for n in PIEZAS)
 conocenos = f'''
-<section class="sub" id="top"><img class="fondo" src="img/dhelmec-8356.jpg" alt=""><div class="wrap"><p class="ojo enter">Conócenos</p><h1 class="enter d1">Nuestro taller, <em>pieza por pieza.</em></h1><p class="lead enter d2">{len(fotos)} fotos reales del taller de DHELMEC: equipo, estructuras, ductos, bridas e inoxidable.</p></div></section>
-<section><div class="wrap"><div class="grid-g" data-rv-g>{grid}</div></div></section>
+<section class="sub" id="top"><img class="fondo" src="img/f-h-portada.jpg" alt=""><div class="wrap"><p class="ojo enter">Conócenos</p><h1 class="enter d1">Nuestro taller, <em>pieza por pieza.</em></h1><p class="lead enter d2">Lo que fabricamos y con qué lo fabricamos: ductos y espirotubo en varios calibres y materiales, estructuras, inoxidable, tubería bridada y la maquinaria del taller.</p></div></section>
+<section><div class="wrap"><div class="cab" data-rv><div><p class="ojo">Lo que fabricamos</p><h2>Ductos, tubería <em>y piezas.</em></h2></div><p>Galvanizado, acero negro e inoxidable. Espirotubo, ducto recto, codos, tees, reducciones, bridas y estructuras.</p></div><div class="grid-g" data-rv-g>{piezas}</div></div></section>
+<section class="band"><div class="wrap"><div class="cab" data-rv><div><p class="ojo">Con qué lo hacemos</p><h2>Maquinaria <em>del taller.</em></h2></div><p>Equipo propio de corte, doblez, perforado y roscado en nuestro taller de Las Hadas, Aguascalientes.</p></div><div class="grid-m" data-rv-g>{maq}</div></div></section>
+<section><div class="wrap"><div class="cab" data-rv><div><p class="ojo">El taller</p><h2>Fotos <em>del día a día.</em></h2></div></div><div class="grid-g" data-rv-g>{grid}</div></div></section>
 <section class="band"><div class="wrap">
   <div class="cab" data-rv><div><p class="ojo">Todo listo para completar</p><h2>Lo que falta <em>de DHELMEC.</em></h2></div><p>La página ya funciona. Estos datos se agregan en cuanto el taller los mande.</p></div>
   <div class="falta" data-rv-g>
@@ -207,6 +213,7 @@ conocenos = f'''
     <div><i></i><div><b>Proyectos con nombre</b><span>Foto, cliente o planta y qué se hizo, para la sección de obras.</span></div></div>
     <div><i></i><div><b>Logos de clientes</b><span>Empresas e industrias con las que han trabajado.</span></div></div>
     <div><i></i><div><b>Equipo</b><span>Foto, nombre y puesto de los responsables.</span></div></div>
+    <div><i></i><div><b>Nombre de cada máquina</b><span>Para ponerle su etiqueta a cada foto de maquinaria.</span></div></div>
   </div>
 </div></section>
 {CONTACTO_BLOQUE}
@@ -214,7 +221,7 @@ conocenos = f'''
 
 # ---------- CONTACTO ----------
 contacto = f'''
-<section class="sub" id="top"><img class="fondo" src="img/dhelmec-8382.jpg" alt=""><div class="wrap"><p class="ojo enter">Contacto</p><h1 class="enter d1">Hablemos de <em>tu proyecto.</em></h1><p class="lead enter d2">Cuéntanos qué necesitas fabricar, instalar, adecuar o mover. Estamos en Aguascalientes.</p></div></section>
+<section class="sub" id="top"><img class="fondo" src="img/f-s-instalaciones.jpg" alt=""><div class="wrap"><p class="ojo enter">Contacto</p><h1 class="enter d1">Hablemos de <em>tu proyecto.</em></h1><p class="lead enter d2">Cuéntanos qué necesitas fabricar, instalar, adecuar o mover. Estamos en Aguascalientes.</p></div></section>
 {CONTACTO_BLOQUE.replace('<section id="cotizar" class="band">','<section id="cotizar">')}
 <section class="band" style="padding-top:0"><div class="wrap" data-rv><iframe class="mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa DHELMEC" src="https://maps.google.com/maps?q=Circe%2C+Las+Hadas%2C+20140+Aguascalientes%2C+Ags.&z=15&output=embed"></iframe></div></section>
 '''
