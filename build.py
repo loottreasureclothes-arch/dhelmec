@@ -50,11 +50,11 @@ def shell(archivo, titulo, desc, cuerpo):
 
 SERVICIOS = [
  ("instalaciones","img/f-s-instalaciones.jpg","Instalaciones electromecánicas","Eléctricas y mecánicas en planta","Ejecución y adecuación de instalaciones eléctricas y mecánicas para líneas, equipos y áreas de producción. Tableros, alimentaciones, canalizaciones y puesta en marcha."),
- ("ductos","img/f-d-8376.jpg","Ductos y espirotubo","Galvanizado, negro e inoxidable, varios calibres","Fabricamos espirotubo (ducto en espiral), ducto recto, codos, tees, reducciones y piezas especiales a la medida, en el calibre y material que pide cada proyecto: extracción, ventilación, aire y procesos."),
+ ("ductos","img/n-ductos-instalados.jpg","Ductos y espirotubo","Galvanizado, negro e inoxidable, varios calibres","Fabricamos espirotubo (ducto en espiral), ducto recto, codos, tees, reducciones y piezas especiales a la medida, en el calibre y material que pide cada proyecto: extracción, ventilación, aire y procesos."),
  ("paileria","img/f-s-estructuras.jpg","Pailería y estructuras","Fabricación metálica ligera y media","Bases, soportes, plataformas, protecciones, racks y estructuras metálicas para dentro de planta. Diseñadas para cargar lo que tu proceso necesita."),
  ("soldadura","img/f-s-inox.jpg","Soldadura e inoxidable","Fabricación, unión y adecuaciones","Soldadura para mantenimiento, montaje y fabricación de componentes metálicos, incluyendo piezas en acero inoxidable para alimentos y procesos."),
  ("tuberias","img/f-s-tuberias.jpg","Tuberías de proceso","Fabricación, montaje y adecuación","Spools, tramos bridados y modificaciones de tubería para servicios industriales: agua, aire, vapor y procesos, adaptados a la operación del cliente."),
- ("maquinaria","img/f-m-8359.jpg","Movimiento de maquinaria","Descarga, maniobra y colocación","Bajamos, movemos y colocamos equipos y maquinaria con montacargas y maniobras controladas, hasta dejarlos en el punto exacto dentro de la planta."),
+ ("maquinaria","img/n-m-hydratool.jpg","Movimiento de maquinaria","Descarga, maniobra y colocación","Bajamos, movemos y colocamos equipos y maquinaria con montacargas y maniobras controladas, hasta dejarlos en el punto exacto dentro de la planta."),
 ]
 
 def tarjetas():
@@ -63,7 +63,7 @@ def tarjetas():
         out.append(f'<a class="tarj" href="servicios.html#{id_}"><img src="{img}" alt="{t}" loading="lazy"><span class="num">0{i}</span><div class="pie"><b>{t}</b><span>{sub}</span></div></a>')
     return "".join(out)
 
-GAL_HOME = ["f-d-8376","f-m-8366","f-d-8369","f-d-8385","f-m-8372","f-d-8377","f-s-inox","f-m-8384"]
+GAL_HOME = ["n-ductos-instalados","n-espirotubo","n-m-verson-gris","n-ducto-inox","f-s-estructuras","n-m-cizalla-mecanica","f-s-tuberias","n-m-sierra"]
 def collage():
     out=[]
     for i,n in enumerate(GAL_HOME):
@@ -133,7 +133,7 @@ index = f'''
 <section id="nosotros">
   <div class="wrap">
     <div class="dos">
-      <div class="foto-marco" data-rv><img src="img/f-d-8377.jpg" alt="Espirotubo fabricado por DHELMEC" loading="lazy"><span>Espirotubo · taller DHELMEC</span></div>
+      <div class="foto-marco" data-rv><img src="img/n-espirotubo.jpg" alt="Espirotubo fabricado por DHELMEC" loading="lazy"><span>Espirotubo en varios diámetros</span></div>
       <div data-rv>
         <p class="ojo">Quién es DHELMEC</p>
         <h2>Soluciones que <em>funcionan en planta.</em></h2>
@@ -163,7 +163,7 @@ filas=[]
 for i,(id_,img,t,sub,txt) in enumerate(SERVICIOS):
     filas.append(f'''<div class="fila-s {"inv" if i%2 else ""}" id="{id_}" data-rv><img src="{img}" alt="{t}" loading="lazy"><div class="texto"><h4>Servicio 0{i+1}</h4><h3>{t}</h3><h4>{sub}</h4><p>{txt}</p><a class="btn" href="contacto.html">Solicitar cotización</a></div></div>''')
 servicios = f'''
-<section class="sub" id="top"><img class="fondo" src="img/f-d-8376.jpg" alt=""><div class="wrap"><p class="ojo enter">Servicios</p><h1 class="enter d1">Lo que hacemos, <em>área por área.</em></h1><p class="lead enter d2">Fabricación, instalación y maniobra para las necesidades reales de cada proyecto industrial.</p></div></section>
+<section class="sub" id="top"><img class="fondo" src="img/n-ductos-instalados.jpg" alt=""><div class="wrap"><p class="ojo enter">Servicios</p><h1 class="enter d1">Lo que hacemos, <em>área por área.</em></h1><p class="lead enter d2">Fabricación, instalación y maniobra para las necesidades reales de cada proyecto industrial.</p></div></section>
 <section><div class="wrap">{"".join(filas)}</div></section>
 {CONTACTO_BLOQUE}
 '''
@@ -195,14 +195,14 @@ ORDEN = "8387 8366 8370 8377 8389 8360 8382 8372 8356 8378 8369 8375 8386 8359 8
 _todas = {os.path.basename(f) for f in glob.glob(os.path.join(HERE,"img","g-*.jpg"))}
 fotos = [f"g-{n}.jpg" for n in ORDEN if f"g-{n}.jpg" in _todas] + sorted(f for f in _todas if f[2:6] not in ORDEN)
 grid = "".join(f'<a href="img/{f}" data-lb><img src="img/{f}" alt="Taller DHELMEC" loading="lazy"></a>' for f in fotos)
-MAQ = [("f-m-8360","Cizalla hidráulica"),("f-m-8359","Dobladora hidráulica"),("f-m-8372","Dobladora"),("f-m-8378","Dobladora"),("f-m-8362","Cizalla"),("f-m-8384","Roladora"),("f-m-8366","Taladro radial"),("f-m-8371","Roscadora de tubo"),("f-m-8364","Cortadora"),("f-m-8388","Mesa de trabajo"),("f-m-8383","Equipo en inoxidable")]
-maq = "".join(f'<a class="maq" href="img/{n}.jpg" data-lb><img src="img/{n}.jpg" alt="Maquinaria del taller DHELMEC" loading="lazy"></a>' for n,t in MAQ)
-PIEZAS = ["f-d-8376","f-d-8377","f-d-8375","f-d-8373","f-d-8374","f-d-8379","f-d-8385","f-d-8369","f-s-estructuras","f-s-inox","f-s-tuberias","f-x-tablero"]
+MAQ = [("n-m-verson-gris","Dobladora mecánica Verson"),("n-m-hydratool","Cizalla hidráulica HTC Hydra-Tool"),("n-m-verson-verde","Dobladora mecánica Verson"),("n-m-dobladora-verde","Dobladora mecánica"),("n-m-cizalla-mecanica","Cizalla mecánica de guillotina"),("n-m-cizalla-hidraulica","Cizalla hidráulica"),("n-m-sierra","Cortadora de disco"),("n-m-roscadora","Roscadora de tubo"),("n-m-taladros","Taladros"),("n-m-ares","ARES"),("n-m-inox","Equipo en acero inoxidable")]
+maq = "".join(f'<a class="maq" href="img/{n}.jpg" data-lb><img src="img/{n}.jpg" alt="{t}" loading="lazy"><b>{t}</b></a>' for n,t in MAQ)
+PIEZAS = ["n-ductos-instalados","n-espirotubo","n-ducto-inox","f-s-tuberias","f-s-estructuras","f-s-inox","f-s-instalaciones","f-h-portada"]
 piezas = "".join(f'<a href="img/{n}.jpg" data-lb><img src="img/{n}.jpg" alt="Pieza fabricada por DHELMEC" loading="lazy"></a>' for n in PIEZAS)
 conocenos = f'''
 <section class="sub" id="top"><img class="fondo" src="img/f-h-portada.jpg" alt=""><div class="wrap"><p class="ojo enter">Conócenos</p><h1 class="enter d1">Nuestro taller, <em>pieza por pieza.</em></h1><p class="lead enter d2">Lo que fabricamos y con qué lo fabricamos: ductos y espirotubo en varios calibres y materiales, estructuras, inoxidable, tubería bridada y la maquinaria del taller.</p></div></section>
-<section><div class="wrap"><div class="cab" data-rv><div><p class="ojo">Lo que fabricamos</p><h2>Ductos, tubería <em>y piezas.</em></h2></div><p>Galvanizado, acero negro e inoxidable. Espirotubo, ducto recto, codos, tees, reducciones, bridas y estructuras.</p></div><div class="grid-g" data-rv-g>{piezas}</div></div></section>
-<section class="band"><div class="wrap"><div class="cab" data-rv><div><p class="ojo">Con qué lo hacemos</p><h2>Maquinaria <em>del taller.</em></h2></div><p>Equipo propio de corte, doblez, perforado y roscado en nuestro taller de Las Hadas, Aguascalientes.</p></div><div class="grid-m" data-rv-g>{maq}</div></div></section>
+<section><div class="wrap"><div class="cab" data-rv><div><p class="ojo">Lo que fabricamos</p><h2>Ductos, tubería <em>y piezas.</em></h2></div><p>Espirotubo y ductería galvanizada, ductos de acero inoxidable, tubería bridada de acero al carbón y estructuras metálicas.</p></div><div class="grid-g" data-rv-g>{piezas}</div></div></section>
+<section class="band"><div class="wrap"><div class="cab" data-rv><div><p class="ojo">Con qué lo hacemos</p><h2>Maquinaria <em>del taller.</em></h2></div><p>Dobladoras Verson, cizallas hidráulicas y mecánicas, cortadora, taladros y roscadora de tubo. Equipo propio en nuestro taller de Las Hadas, Aguascalientes.</p></div><div class="grid-m" data-rv-g>{maq}</div></div></section>
 <section><div class="wrap"><div class="cab" data-rv><div><p class="ojo">El taller</p><h2>Fotos <em>del día a día.</em></h2></div></div><div class="grid-g" data-rv-g>{grid}</div></div></section>
 <section class="band"><div class="wrap">
   <div class="cab" data-rv><div><p class="ojo">Todo listo para completar</p><h2>Lo que falta <em>de DHELMEC.</em></h2></div><p>La página ya funciona. Estos datos se agregan en cuanto el taller los mande.</p></div>
@@ -213,7 +213,7 @@ conocenos = f'''
     <div><i></i><div><b>Proyectos con nombre</b><span>Foto, cliente o planta y qué se hizo, para la sección de obras.</span></div></div>
     <div><i></i><div><b>Logos de clientes</b><span>Empresas e industrias con las que han trabajado.</span></div></div>
     <div><i></i><div><b>Equipo</b><span>Foto, nombre y puesto de los responsables.</span></div></div>
-    <div><i></i><div><b>Nombre de cada máquina</b><span>Para ponerle su etiqueta a cada foto de maquinaria.</span></div></div>
+    <div><i></i><div><b>Qué hace la máquina ARES</b><span>No aparece en catálogos; falta confirmar su función para describirla.</span></div></div>
   </div>
 </div></section>
 {CONTACTO_BLOQUE}
